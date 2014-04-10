@@ -11,8 +11,6 @@
 #import <UIImageView+AFNetworking.h>
 #import "TableViewCell.h"
 
-#define _STCellId @"Cell"
-
 
 @interface PopularTableViewController(){
     NSMutableArray *urls;
