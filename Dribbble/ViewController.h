@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
+    @property NSString *imageUrl;
+    @property IBOutlet UIImageView *imageView;
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 
 @interface ViewController ()
 
@@ -14,16 +16,29 @@
 
 @implementation ViewController
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    [self.imageView setContentMode:UIViewContentModeScaleAspectFit];
+    [self.imageView setImageWithURL:[NSURL URLWithString:self.imageUrl]];
+}
+- (IBAction)closeModal:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES                                                        completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
 
 @end
